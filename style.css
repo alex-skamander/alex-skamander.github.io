@@ -1,0 +1,1066 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap");
+
+* {
+  padding: 0 0px;
+  margin: 0 auto;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: "Exo 2", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 150px;
+  background: url("bg_top.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.header_container {
+  width: 100%;
+  height: 100%;
+  max-width: 1340px; /*максимальная ширина может иметь другое значение*/
+  padding: 0 50px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "logo header_center header_button";
+}
+
+.logo {
+  color: white;
+  vertical-align: middle;
+  grid-area: logo;
+  margin: auto;
+}
+
+.logo img {
+  width: 90%;
+  height: auto;
+}
+
+.header_button {
+  grid-area: header_button;
+}
+
+.cd-user-modal {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.cd-user-modal.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.bag_user {
+  position: relative;
+  cursor: pointer;
+  right: -7px;
+  top: 40px;
+}
+
+.dropdown button {
+  outline: none;
+  border: 0.1px solid rgba(137, 43, 226, 0);
+}
+.dropbtn {
+  position: relative;
+  cursor: pointer;
+  right: -7px;
+  top: 27px;
+}
+
+.header_center {
+  grid-area: header_center;
+}
+.your_city {
+  color: #2d55b6;
+  font-size: 17px;
+  padding-top: 5px;
+}
+
+.search {
+  box-sizing: border-box;
+  padding-top: 50px;
+}
+.search form {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+.search input,
+button {
+  outline: none;
+  background: transparent;
+  color: white;
+}
+.search input {
+  width: 120%;
+  height: 35px;
+  padding-left: 10px;
+  border: 3px solid #f9f0da;
+  color: #2d55b6;
+}
+
+.search input::placeholder {
+  color: #2d55b6;
+}
+.search button {
+  border: none;
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  top: 0;
+  right: -70px;
+  cursor: pointer;
+}
+.search button:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #f9f0da;
+}
+
+#navbar {
+  position: absolute;
+  color: white;
+  width: 100%;
+  height: 40px;
+  font-weight: bold;
+  list-style-type: none;
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    #1d0963,
+    #4758a7,
+    #2e65aa,
+    #55afde,
+    #2691c6,
+    #7c8be6,
+    #55afde,
+    #3c4595,
+    #231a70
+  );
+}
+#navbar a {
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  width: 100px;
+}
+#navbar a:hover {
+  border-radius: 5px 5px;
+  background-color: #72c9ff9a;
+}
+
+#navbar li {
+  display: inline;
+}
+
+.main_container {
+  width: 100%;
+  height: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+}
+
+.banners {
+  margin-top: 5%;
+  margin-left: 3%;
+  margin-right: -8.5%;
+}
+
+.banners img {
+  width: 90%;
+  height: auto;
+}
+
+.news,
+.bestsellers,
+.catalog,
+.job,
+.recommendation,
+.delivery_and_pay,
+.video_reviews,
+.reviews_about_us,
+.bag {
+  font-size: 150%;
+  margin-left: 3%;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  font-weight: bold;
+  color: #2e65aa;
+}
+
+.products,
+.news_products,
+.recommendation_products {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: 50% 50%;
+  grid-row-gap: 5%;
+  margin-bottom: 5%;
+}
+
+.buttons_products {
+  display: flex;
+}
+
+.button_info,
+.button_buy {
+  padding: 9px;
+  background-color: #55afde;
+  border-radius: 4px;
+  color: white;
+  font-family: "Exo 2", sans-serif;
+  font-size: 100%;
+  border-width: 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.buttons_products a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.author {
+  color: gray;
+}
+
+.price {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  text-align: center;
+  font-weight: bold;
+}
+
+footer {
+  width: 100%;
+  height: 20%;
+  background: #55afde;
+  background-size: cover;
+  bottom: 0;
+}
+
+.footer_container {
+  width: 100%;
+  height: 300px;
+  max-width: 1340px;
+  padding: 0 50px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.subscribe_form {
+  margin: 5px 0;
+}
+
+form {
+  display: block;
+}
+
+.left_info a,
+.right_info a {
+  color: white;
+  margin-top: 10%;
+  text-decoration: none;
+}
+
+.left_info {
+  color: white;
+  margin-top: 5%;
+  margin-left: -0.1%;
+}
+
+.right_info {
+  color: white;
+  margin-top: 5%;
+  margin-right: 5%;
+}
+
+.OOO {
+  margin-top: 30%;
+  font-size: small;
+}
+
+.subscribe_form input {
+  height: 35px;
+  padding-left: 10px;
+  border: 3px solid white;
+  border-radius: 5px;
+}
+
+.button_email {
+  height: 42px;
+  width: 100px;
+  border-radius: 5px;
+  border: 3px solid #2e65aa;
+  background-color: #2e65aa;
+  cursor: pointer;
+}
+
+.catalog,
+.news,
+.job,
+.recommendation,
+.delivery_and_pay,
+.video_reviews,
+.reviews_about_us,
+.bag {
+  margin-top: 5%;
+  font-weight: bold;
+  color: #2e65aa;
+}
+
+.text_job {
+  margin-left: 3%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: large;
+}
+
+.job,
+.color_blue,
+.list_title {
+  margin-bottom: 2%;
+  color: #2e65aa;
+}
+
+.vacancies {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 4%;
+  margin-left: 4%;
+}
+
+.text {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: large;
+}
+
+.want_work_list {
+  margin-left: 3%;
+  font-size: large;
+}
+
+.want_work_list a,
+.text a,
+.bag_text a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.list_text li {
+  margin-left: 4.5%;
+  font-size: large;
+}
+
+.list_text {
+  margin-bottom: 2%;
+}
+
+.text_way_pay {
+  margin-left: 3%;
+  margin-bottom: 1%;
+  font-size: large;
+}
+
+.list_title {
+  font-weight: bold;
+  font-size: 110%;
+  margin-left: 3%;
+}
+
+.video {
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  grid-row-gap: 6%;
+  grid-column-gap: 3%;
+  margin-bottom: 10%;
+  margin-left: 3%;
+}
+
+iframe {
+  width: 110%;
+  height: auto;
+}
+
+.video_name {
+  font-size: large;
+  font-weight: bold;
+}
+
+.review {
+  border: 2px solid #2e66aa69;
+  background-color: #55aede31;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.avatar {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+  width: 90px;
+}
+
+.review span {
+  font-size: 20px;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.review:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.review img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.text_review {
+  margin-left: 10%;
+}
+
+.reviews {
+  margin-left: 3%;
+  margin-right: 9%;
+}
+
+.bag_text {
+  margin-bottom: 9.11%;
+  margin-top: 2%;
+  display: flex;
+  text-align: center;
+}
+
+.icon_bag {
+  margin-top: 2%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.hamburger-menu {
+  visibility: hidden;
+}
+
+/* скрываем чекбокс */
+#menu__toggle {
+  opacity: 0;
+}
+/* стилизуем кнопку */
+.menu__btn {
+  display: flex; /* используем flex для центрирования содержимого */
+  align-items: center; /* центрируем содержимое кнопки */
+  position: fixed;
+  top: 5px;
+  right: 10px;
+  width: 20px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+/* добавляем "гамбургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: whitesmoke;
+}
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+/* контейнер меню */
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  background: linear-gradient(to bottom left, #1d0963, #2e65aa, #55afde);
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+}
+/* элементы меню */
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: whitesmoke;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.menu__item:hover {
+  background-color: #cfd8dc;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: 0.25s;
+}
+.menu__box {
+  transition-duration: 0.25s;
+}
+.menu__item {
+  transition-duration: 0.25s;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 509px) {
+  .banners {
+    margin-top: 3%;
+    margin-bottom: -4%;
+  }
+  .banners img {
+    width: 90%;
+    height: auto;
+  }
+  header {
+    width: 100%;
+    height: 90px;
+    background: url("bg_top.jpg") center no-repeat;
+    background-size: cover;
+  }
+
+  .hamburger-menu {
+    visibility: visible;
+  }
+
+  .dropbtn img {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center; /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 6px;
+    right: 45px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .bag_user img {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center; /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 7px;
+    right: 85px;
+    width: 25px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .your_city {
+    width: 50%;
+    font-size: 14px;
+    position: relative;
+    left: -5%;
+    color: white;
+  }
+
+  .review {
+    text-align: center;
+  }
+  .review img {
+    margin: auto;
+    float: none;
+    display: block;
+  }
+
+  #navbar,
+  .your_city,
+  .search {
+    visibility: hidden;
+  }
+
+  .logo img {
+    width: 110px;
+    height: auto;
+    margin-left: -35%;
+    margin-bottom: 30%;
+  }
+
+  .news_products {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 25%;
+    grid-row-gap: 1%;
+    margin-bottom: 5%;
+  }
+
+  .right_info,
+  .left_info {
+    font-size: 14px;
+  }
+
+  .footer_container {
+    width: 100%;
+    height: 260px;
+    max-width: 500px;
+    padding: 0 10px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 2%;
+  }
+
+  .subscribe_form {
+    margin: 5px 0;
+  }
+
+  .OOO {
+    margin-top: 40%;
+    font-size: 11px;
+  }
+
+  .subscribe_form input {
+    height: 20px;
+    width: 40%;
+    padding-left: 10px;
+    border: 3px solid white;
+    border-radius: 5px;
+  }
+
+  .button_email {
+    height: 28px;
+    width: 40%;
+    border-radius: 5px;
+    border: 3px solid #2e65aa;
+    background-color: #2e65aa;
+    cursor: pointer;
+    font-size: 9px;
+  }
+  .pay_ways img {
+    width: 39px;
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7% 7%;
+    margin-bottom: 450%;
+  }
+
+  .news_products,
+  .recommendation_products {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 20%;
+    margin-bottom: 120%;
+  }
+
+  .video {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 4%;
+    grid-column-gap: 1%;
+    margin-bottom: 170%;
+    margin-left: -0.7%;
+  }
+
+  footer {
+    margin-top: 10%;
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+
+  .social_network img {
+    width: 14%;
+    height: auto;
+  }
+
+  .news,
+  .bestsellers,
+  .catalog,
+  .job,
+  .recommendation,
+  .delivery_and_pay,
+  .video_reviews,
+  .reviews_about_us,
+  .bag {
+    font-size: 120%;
+    margin-bottom: 3%;
+  }
+
+  .vacancies {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-column-gap: 1%;
+    margin-left: 2%;
+  }
+
+  .text_job,
+  .color_blue,
+  .text {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 90%;
+  }
+
+  .want_work_list,
+  .list_text li {
+    margin-left: 8%;
+    font-size: 90%;
+  }
+
+  .text_way_pay {
+    margin-left: 3%;
+    margin-bottom: 1%;
+    font-size: 90%;
+  }
+
+  .list_title {
+    font-weight: bold;
+    font-size: 90%;
+    margin-left: 3%;
+  }
+
+  .bag_user_2 {
+    margin-bottom: 30%;
+  }
+
+  .pay_ways img {
+    width: 15%;
+  }
+}
+
+@media only screen and (min-width: 510px) and (max-width: 779px) {
+  .banners {
+    margin-top: 2%;
+    margin-bottom: -4%;
+  }
+  .banners img {
+    width: 90%;
+    height: auto;
+  }
+  header {
+    width: 100%;
+    height: 113px;
+    background: url("bg_top.jpg") center no-repeat;
+    background-size: cover;
+  }
+
+  .hamburger-menu {
+    visibility: visible;
+  }
+
+  .dropbtn img {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center; /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 40px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .bag_user img {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center; /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 78px;
+    right: 8px;
+    width: 25px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .your_city {
+    width: 70%;
+    font-size: 14px;
+    position: relative;
+    left: -5%;
+    color: white;
+  }
+
+  .review {
+    text-align: center;
+  }
+  .review img {
+    margin: auto;
+    float: none;
+    display: block;
+  }
+
+  #navbar {
+    visibility: hidden;
+  }
+
+  .logo img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
+
+  .search input {
+    width: 70%;
+    height: 25px;
+    position: relative;
+    left: 10%;
+    bottom: 15px;
+    border: 3px solid #f9f0da;
+    color: #f9f0da;
+  }
+
+  .search input::placeholder {
+    color: #f9f0da;
+  }
+  .search button {
+    border: none;
+    position: relative;
+    right: 13px;
+    top: -15px;
+    cursor: pointer;
+  }
+  .search button:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #f9f0da;
+  }
+
+  .news_products {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 25%;
+    grid-row-gap: 1%;
+    margin-bottom: 5%;
+  }
+
+  .right_info,
+  .left_info {
+    font-size: 14px;
+  }
+
+  .footer_container {
+    width: 100%;
+    height: 300px;
+    max-width: 500px;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 3%;
+  }
+
+  .subscribe_form {
+    margin: 5px 0;
+  }
+
+  .OOO {
+    margin-top: 30%;
+    font-size: 13px;
+  }
+
+  .subscribe_form input {
+    height: 25px;
+    width: 50%;
+    padding-left: 10px;
+    border: 3px solid white;
+    border-radius: 5px;
+  }
+
+  .button_email {
+    height: 33px;
+    width: 40%;
+    border-radius: 5px;
+    border: 3px solid #2e65aa;
+    background-color: #2e65aa;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .pay_ways img {
+    width: 26px;
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 20% 20%;
+    grid-row-gap: 5%;
+    margin-bottom: 75%;
+  }
+
+  .news_products,
+  .recommendation_products {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 35% 35%;
+    grid-row-gap: 5%;
+    margin-bottom: 30%;
+  }
+
+  .video {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 4%;
+    grid-column-gap: 1%;
+    margin-bottom: 120%;
+    margin-left: -10%;
+  }
+
+  footer {
+    margin-top: 10%;
+  }
+
+  iframe {
+    width: 120%;
+    height: auto;
+  }
+
+  .social_network img {
+    width: 15%;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 780px) and (max-width: 1000px) {
+  .products {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: 25% 25%;
+    grid-row-gap: 5%;
+    margin-bottom: 5%;
+  }
+
+  .news_products,
+  .recommendation_products {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: 55% 55%;
+    grid-row-gap: 5%;
+    margin-bottom: 5%;
+  }
+
+  .catalog,
+  .news,
+  .recommendation {
+    margin-top: 7%;
+    margin-left: 6.5%;
+  }
+
+  .bestsellers {
+    margin-left: 6%;
+  }
+
+  .video_reviews,
+  .reviews_about_us,
+  .delivery_and_pay,
+  .job,
+  .bag,
+  .banners {
+    margin-top: 7%;
+  }
+
+  .reviews,
+  .news_products,
+  .recommendation_products,
+  .bag_user {
+    padding-bottom: 8%;
+  }
+
+  .catalog_products,
+  .video {
+    padding-bottom: 25%;
+  }
+
+  .right_info {
+    margin-right: 20%;
+  }
+
+  #navbar a {
+    padding: 1% 1%;
+  }
+  .your_city {
+    color: white;
+  }
+
+  .logo {
+    width: 120%;
+    margin-top: 15%;
+    margin-left: -4%;
+  }
+
+  .video {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-row-gap: 4%;
+    grid-column-gap: 1%;
+    margin-bottom: 5%;
+    margin-left: 1%;
+  }
+
+  iframe {
+    width: 110%;
+    height: auto;
+  }
+
+  .social_network img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .banners img {
+    width: 85%;
+    height: auto;
+  }
+
+  .banners {
+    margin-left: 6%;
+    margin-bottom: -5%;
+  }
+}

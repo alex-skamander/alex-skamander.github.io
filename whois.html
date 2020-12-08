@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*Адаптивное меню*/
+      .menu {
+        display: block;
+        background-color: #ffffff;
+      }
+
+      .menu li {
+        display: inline-block;
+        position: relative;
+        z-index: 100;
+        padding: 0 10rem 0 0;
+      }
+
+      .menu li a {
+        font-family: "Montserrat", sans-serif;
+
+        text-decoration: none;
+        padding: 11px;
+        display: block;
+        color: black;
+
+        -webkit-transition: all 0.2s ease-in-out 0s;
+        -moz-transition: all 0.2s ease-in-out 0s;
+        -o-transition: all 0.2s ease-in-out 0s;
+        -ms-transition: all 0.2s ease-in-out 0s;
+        transition: all 0.2s ease-in-out 0s;
+      }
+
+      .menu li a:hover,
+      .menu li:hover > a {
+        color: black;
+        background: #ffffff;
+      }
+
+      /* hide the second level menu */
+      .menu ul {
+        display: none;
+        margin: 0;
+        padding: 0;
+        width: 150px;
+        position: absolute;
+        top: 43px;
+        left: 0px;
+        background: #ffffff;
+      }
+
+      /* display second level menu on hover */
+      .menu li:hover > ul {
+        display: block;
+      }
+
+      .menu ul li {
+        display: block;
+        float: none;
+        background: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .menu ul li a {
+        font-size: 12px;
+        font-weight: normal;
+        display: block;
+        color: #797979;
+        border-left: 3px solid #ffffff;
+        background: #ffffff;
+      }
+
+      .menu ul li a:hover,
+      .menu ul li:hover > a {
+        background: #f0f0f0;
+        border-left: 3px solid #ffffff;
+        color: #797979;
+      }
+
+      .menu ul ul {
+        left: 149px;
+        top: 0px;
+      }
+
+      /* change level 3 menu positions */
+      .menu ul ul {
+        left: 149px;
+        top: 0px;
+      }
+
+      .mobile-menu {
+        display: none;
+        width: 100%;
+        padding: 11px;
+        background: #231f20;
+        color: #ffffff !important;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .mobile-menu:hover {
+        background: #231f20;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      @media (max-width: 768px) {
+        .menu li {
+          padding: 0 6.5rem 0 0;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .menu {
+          display: none;
+        }
+
+        .mobile-menu {
+          display: block;
+          margin-top: 20px;
+        }
+
+        nav {
+          margin: 0;
+          background: none;
+        }
+
+        .menu li {
+          display: block;
+          margin: 0;
+        }
+
+        .menu li a {
+          background: #ffffff;
+          color: #797979;
+          border-top: 1px solid #e0e0e0;
+          border-left: 3px solid #ffffff;
+        }
+
+        .menu li a:hover,
+        .menu li:hover > a {
+          background: #f0f0f0;
+          color: #797979;
+          border-left: 3px solid #9ca3da;
+        }
+
+        /*level 2 and 3 - make same width as all items*/
+        .menu ul {
+          display: block;
+          position: relative;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+
+        .menu ul ul {
+          left: 0;
+        }
+      } /*end media queries*/
+    </style>
+
+    <script>
+      $(document).ready(function () {
+        var touch = $("#touch-menu");
+        var menu = $(".menu");
+
+        $(touch).on("click", function (e) {
+          e.preventDefault();
+          menu.slideToggle();
+        });
+
+        $(window).resize(function () {
+          var w = $(window).width();
+          if (w > 767 && menu.is(":hidden")) {
+            menu.removeAttr("style");
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <nav>
+      <a id="touch-menu" class="mobile-menu" href="#">
+        <i class="fa fa-bars" aria-hidden="true"></i>Меню
+      </a>
+      <ul class="menu">
+        <li><a href="#">Пункт 1</a></li>
+        <li><a href="#">Пункт 2</a></li>
+        <li><a href="#">Пункт 3</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
